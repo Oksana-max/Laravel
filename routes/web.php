@@ -2,6 +2,7 @@
 
 //controllers
 use App\Http\Controllers\NewsController;
+use app\Http\Controllers\CategoryController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 
@@ -17,8 +18,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 });
 
 
-
+Route::get('/',[CategoryController::class, 'index'])
+->name('category');
+		
 Route::group(['prefix' => 'news'], function(){
+
     Route::get('/', [NewsController::class, 'index'])
 		->name('news');
 	Route::get('/show/{id}', [NewsController::class, 'show'])

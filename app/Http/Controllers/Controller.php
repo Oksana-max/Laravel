@@ -13,23 +13,39 @@ class Controller extends BaseController
     protected $newsList = [
         [
             'id' => 1,
-            'title' => 'News 1',
-            'description' => 'descrition News 1'
+            'title' => 'О футболе 1',
+            'description' => 'description News 1'
 
         ],
         [
             'id' => 2,
-            'title' => 'News 2',
-            'description' => 'descrition News 2'
+            'title' => 'О хоккее 2',
+            'description' => 'description News 2'
 
         ],
         [
             'id' => 3,
-            'title' => 'News 3',
-            'description' => 'descrition News 3'
+            'title' => 'О бейсболе 3',
+            'description' => 'description News 3'
 
         ]
         ];
+
+// //массив для вывода категорий новостей
+//     protected $CategoryList = [
+//         [
+//             'id' => 1,
+//             'title' => 'Все о спорте',
+//         ],
+//         [
+//             'id' => 2,
+//             'title' => 'В мире кино',
+//         ],
+//         [
+//             'id' => 3,
+//             'title' => 'Политика',
+//         ]
+//         ];
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }

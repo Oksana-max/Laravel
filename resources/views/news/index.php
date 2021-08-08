@@ -1,4 +1,4 @@
-<h1>List News</h1>
+<h1>Все о спорте</h1>
 <br>
 <?php foreach($news as $n): ?>
     <div>

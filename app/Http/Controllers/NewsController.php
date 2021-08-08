@@ -9,7 +9,7 @@ class NewsController extends Controller
 {
     public function index (){
         // Show new  List
-        return view('news/index', [
+        return view('news.index', [
             'news' => $this -> newsList
         ]);
     }
