@@ -2,7 +2,7 @@
 <br>
 <?php foreach($news as $n): ?>
     <div>
-        <strong><a href="<?=route('news/show', [
+        <strong><a href="<?=route('news.articale', [
             'id' => $n['id']
         ])?>"><?=$n['title']?></a></strong>
         <p><?= $n['description']?></p>

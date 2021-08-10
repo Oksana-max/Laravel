@@ -10,26 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
 
-    protected $newsList = [
-        [
-            'id' => 1,
-            'title' => 'О футболе 1',
-            'description' => 'description News 1'
-
-        ],
-        [
-            'id' => 2,
-            'title' => 'О хоккее 2',
-            'description' => 'description News 2'
-
-        ],
-        [
-            'id' => 3,
-            'title' => 'О бейсболе 3',
-            'description' => 'description News 3'
-
-        ]
-        ];
+//массив для вывода конкретной категории
 
 // //массив для вывода категорий новостей
 //     protected $CategoryList = [

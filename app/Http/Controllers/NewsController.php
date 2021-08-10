@@ -7,9 +7,31 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+//массив для вывода конкретной категории
+	protected $newsList = [
+        [
+            'id' => 1.1,
+            'title' => 'Категория',
+            'description' => 'description News 1'
+
+        ],
+        [
+            'id' => 2.1,
+            'title' => 'Категория',
+            'description' => 'description News 2'
+
+        ],
+        [
+            'id' => 3.1,
+            'title' => 'Категория',
+            'description' => 'description News 3'
+
+        ]
+        ];
+
     public function index (){
-        // Show new  List
-        return view('news.index', [
+        
+        return view('news.cat', [
             'news' => $this -> newsList
         ]);
     }
@@ -28,7 +50,7 @@ class NewsController extends Controller
 		}
 
 
-		return view('news.show', [
+		return view('news.articale', [
 			'id' => $id
 		]);
 	}
