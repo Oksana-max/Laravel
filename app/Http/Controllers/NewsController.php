@@ -16,13 +16,13 @@ class NewsController extends Controller
 
         ],
         [
-            'id' => 2.1,
+            'id' => 1.2,
             'title' => 'Категория',
             'description' => 'description News 2'
 
         ],
         [
-            'id' => 3.1,
+            'id' => 1.3,
             'title' => 'Категория',
             'description' => 'description News 3'
 
@@ -38,14 +38,14 @@ class NewsController extends Controller
 
     public function show(int $id)
 	{
-		$newsList = [];
-		foreach($this->newsList as $news) {
+		$articaleList = [];
+		foreach($this->ArticaelList as $news) {
 			if($news['id'] === $id) {
-				$newsList[] = $news;
+				$articaleList[] = $news;
 			}
 		}
 
-		if(empty($newsList)) {
+		if(empty($articaleList)) {
 			abort(404);
 		}
 

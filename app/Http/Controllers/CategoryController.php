@@ -35,14 +35,14 @@ class CategoryController extends Controller
 
     public function show(int $id)
 	{
-		$catList = [];
-		foreach($this->catList as $news) {
+		$cat = [];
+		foreach($this->cat as $news) {
 			if($news['id'] === $id) {
-				$catList[] = $news;
+				$cat[] = $news;
 			}
 		}
 
-		if(empty($catList)) {
+		if(empty($cat)) {
 			abort(404);
 		}
 

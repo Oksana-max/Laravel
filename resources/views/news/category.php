@@ -1,7 +1,7 @@
 
 <?php foreach($catList as $n): ?>
     <div>
-        <strong><a href="<?=route('news.cat', [
+        <strong><a href="<?=route('news/show', [
             'id' => $n['id']
         ])?>"><?=$n['title']?></a></strong>
         
