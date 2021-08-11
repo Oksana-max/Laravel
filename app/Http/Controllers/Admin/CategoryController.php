@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return response("Список категорий");
+        return view("admins.news.categories.index");
     }
 
     /**
@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admins.news.categories.create');
     }
 
     /**

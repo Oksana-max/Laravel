@@ -10,19 +10,23 @@ class CategoryController extends Controller
     protected $catList = [
         [
             'id' => 1,
-            'title' => 'Все про спорт'
+            'title' => 'Все про спорт',
+            'description' => 'Новости о спорте'
         ],
         [
             'id' => 2,
-            'title' => 'В мире кино'
+            'title' => 'В мире кино',
+            'description' => 'Новости о кино'
         ],
         [
             'id' => 3,
-            'title' => 'О политике'
+            'title' => 'О политике',
+            'description' => 'Новости о политике'
         ],
         [
             'id' => 4,
-            'title' => 'Рецепты'
+            'title' => 'Рецепты',
+            'description' => 'Новые рецепты'
         ]
         ];
 

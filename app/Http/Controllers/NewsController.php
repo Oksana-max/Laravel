@@ -32,20 +32,20 @@ class NewsController extends Controller
     public function index (){
         
         return view('news.cat', [
-            'news' => $this -> newsList
+            'catList' => $this -> catList
         ]);
     }
 
     public function show(int $id)
 	{
-		$articaleList = [];
-		foreach($this->ArticaelList as $news) {
+		$catList = [];
+		foreach($this->catList as $news) {
 			if($news['id'] === $id) {
-				$articaleList[] = $news;
+				$catList[] = $news;
 			}
 		}
 
-		if(empty($articaleList)) {
+		if(empty($catList)) {
 			abort(404);
 		}
 

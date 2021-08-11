@@ -12,19 +12,16 @@ class NewsController extends Controller
     //  *
     //  * @return \Illuminate\Http\Response
     //  */
-    public function index()
-    {
-        return response("Список новостей");
-    }
+    public function index(){
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+        return view('admins.news.index',[
+            'catList' => $this -> catList
+        ]);
+    }
+   
     public function create()
     {
-        //
+        return view('admins.news.create');
     }
 
     /**
