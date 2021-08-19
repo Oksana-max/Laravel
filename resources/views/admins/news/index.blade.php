@@ -20,12 +20,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @forelse($catList as $news)
+                  @forelse($newsList as $news)
                       <tr>
-                          <td>{{ $news['title'] }}</td>
-                          <td>{{ $news['description'] }}</td>
+                          <td>{{ $news->title }}</td>
+                          <td>{{ $news->description }}</td>
                           <td>{{ now()->format('d-m-Y H:i') }}</td>
-                          <td><a href="{{ route('admin.news.edit', ['news' => $news['id']]) }}" style="font-size: 12px;">ред.</a> &nbsp;
+                          <td><a href="{{ route('admin.news.edit', ['news' => $news->id]) }}" style="font-size: 12px;">ред.</a> &nbsp;
                               <a href="javascript:;" style="font-size: 12px; color:red;">уд.</a></td>
                       </tr>
                   @empty

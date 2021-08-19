@@ -6,7 +6,7 @@
 @section('content')
 <h1>Все о спорте</h1>
 <br>
- @foreach($catList as $n)
+ @foreach($newsList as $n)
     <div>
         <strong><a href="<?=route('articale/show', [
             'id' => $n['id']

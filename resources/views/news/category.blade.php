@@ -2,12 +2,13 @@
 @section('title') Список новостей - @parent @stop
 @section('slug') @parent @stop
 @section('content')
-@forelse($catList as $n)
+@forelse($categories as $category)
 <!-- Post preview-->
 <div class="post-preview">
         <a href="{{ route('news/show', ['id' => $n['id']]) }}">
-              <h2 class="post-title">{{ $n['title'] }}</h2>
-              <h3 class="post-subtitle">{{ $n['description'] }}</h3>
+        
+              <h2 class="post-title">{{ $category->title }}</h2>
+              <h3 class="post-subtitle">{{ $category->description }}</h3>
                 </a>
                 <p class="post-meta">
                             Опубликовал

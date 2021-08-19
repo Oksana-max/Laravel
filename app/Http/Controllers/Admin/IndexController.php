@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke(Request $request) {
         return view ('admins.index', [
-            'countNews' => count($this -> catList),
+            'countNews' => count($this -> newsList),
             'countCategories' => 0
         ]);
 

@@ -2,25 +2,44 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\News;
+use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    // /**
-    //  * Display a listing of the resource.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    public function index(){
-
-        return view('admins.news.index',[
-            'catList' => $this -> catList
-        ]);
-    }
-   
-    public function create()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function index(Request $request)
     {
+    	// dd(
+    	// 	\DB::table('news')->join('categories',
+		// 	'news.category_id', '=', 'categories.id')
+		// 	->select("news.*", 'categories.title as categoryTitle')
+		// 	/*->where('news.author', 'like', '%'. $request->query('author') .'%')
+		// 	->where('news.status', '<>', 'DRAFT')
+		// 	->orWhere('news.id', '>', 8)*/
+		// 	->whereNotIn('news.id', [1, 7])
+		// 	->orderBy('news.author', 'desc')
+		//     ->get()
+		// );
+    	$model = new News();
+    	$newsList = $model->getNews();
+		return view('admins.news.index', [
+			'newsList' => $newsList
+		]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function create(Request $request)
+	{
         return view('admins.news.create');
     }
 
@@ -32,7 +51,13 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    	$request->validate([
+    		'title' => ['required', 'string'],
+		]);
+
+        dd($request->url());
+
+
     }
 
     /**

@@ -39,4 +39,9 @@ class NewsTest extends TestCase
 
         $response->assertDontSee('News');
     }
+
+    public function  test_admin_create_news_dont_see_news()
+    {
+        
+    }
 }

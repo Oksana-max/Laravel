@@ -9,29 +9,6 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Controller extends BaseController
 {
-//массив для вывода категорий новостей
-protected $catList = [
-    [
-        'id' => 1,
-        'title' => 'Все про спорт',
-        'description' => 'Новости о спорте'
-    ],
-    [
-        'id' => 2,
-        'title' => 'В мире кино',
-        'description' => 'Новости о кино'
-    ],
-    [
-        'id' => 3,
-        'title' => 'О политике',
-        'description' => 'Новости о политике'
-    ],
-    [
-        'id' => 4,
-        'title' => 'Рецепты',
-        'description' => 'Новые рецепты'
-    ]
-    ];
 
 
 

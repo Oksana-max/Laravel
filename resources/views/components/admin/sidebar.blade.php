@@ -26,6 +26,13 @@
                 Новости
             </div>
 
+
+            <li class="nav-item @if(request()->routeIs('news')) active @endif">
+                <a class="nav-link" href="{{ route('news') }}" >
+                <i class="fas fa-fw fa-list"></i>
+                    <span>Главная(просмотр новостей)</span>
+                </a>
+            </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item  @if(request()->routeIs('admin.categories.*')) active @endif">
                 <a class="nav-link" href="{{ route('admin.categories.index') }}" >
