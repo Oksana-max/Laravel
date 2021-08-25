@@ -9,8 +9,11 @@
 
                     <!-- Content Row -->
 <div class="row">
+@include('inc.message')
 <div class="col-12">
-<form method="post">
+<form method="post" action = "{{route('admin.categories.store') }}">
+    @csrf
+    
            <div class="form-group">
                <label for="title">Заголовок</label>
                <input type="text" class="form-control" name="title" id="title">
