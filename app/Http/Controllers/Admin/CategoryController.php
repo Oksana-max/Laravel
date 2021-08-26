@@ -42,9 +42,7 @@ class CategoryController extends Controller
 	 */
     public function store(Request $request)
     {
-        $request->validate([
-        	'title' => ['required', 'string']
-		]);
+        
 
         $category = Category::create(
 			$request->only(['title', 'description'])
@@ -91,9 +89,7 @@ class CategoryController extends Controller
 	 */
     public function update(Request $request, Category $category)
     {
-		$request->validate([
-			'title' => ['required', 'string']
-		]);
+		
 
 		/*$category->title = $request->input('title');
 		$category->description = $request->input('description');
