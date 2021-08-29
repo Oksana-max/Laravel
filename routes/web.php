@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SourceController;
 use App\Http\Controllers\Admin\IndexController;
+use App\Http\Controllers\Account\IndexController as AccountController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 
@@ -15,15 +16,17 @@ Route::get('/', function () {
 });
 
 
-
+Route::group(['middleware' => 'auth'], function() {
+	Route::get('/account', AccountController::class)
+	->name('account');
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 	Route::get ('/', IndexController::class) -> name('index');
 	 Route::get('/contact', ContactController::class) -> name ('contact');
 	 Route::get('/source', SourceController::class) -> name ('source');
 	Route::resource('categories', AdminCategoryController::class);
 	Route::resource('news', AdminNewsController::class);
+		});
 });
-
 
 
 Route::group(['prefix' => 'news'], function() {
@@ -47,3 +50,18 @@ Route::get('collection', function() {
 	//    $collect->where('work', '=', 'IT')->shuffle()
 	// );
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
